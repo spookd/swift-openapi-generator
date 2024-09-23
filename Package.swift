@@ -66,6 +66,7 @@ let package = Package(
         .target(
             name: "_OpenAPIGeneratorCore",
             dependencies: [
+                .product(name: "Yams", package: "Yams"),
                 .product(name: "OpenAPIKit", package: "OpenAPIKit"),
                 .product(name: "OpenAPIKit30", package: "OpenAPIKit"),
                 .product(name: "OpenAPIKitCompat", package: "OpenAPIKit"),
