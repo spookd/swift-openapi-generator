@@ -12,7 +12,6 @@
 //
 //===----------------------------------------------------------------------===//
 import OpenAPIKit
-import Algorithms
 
 extension FileTranslator {
 
@@ -30,6 +29,16 @@ extension FileTranslator {
                 return try supportedContents(response.content, isRequired: true, foundIn: description.operationID)
             }
             .map { content in content.contentType }
-        return Array(contentTypes.uniqued())
+        var typesSoFar = Array<ContentType>()
+        
+        return Array(contentTypes.filter {
+            if typesSoFar.contains($0) {
+                return false
+            }
+            
+            typesSoFar.append($0)
+            
+            return true
+        })
     }
 }
