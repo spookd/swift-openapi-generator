@@ -47,9 +47,6 @@ let package = Package(
     ],
     dependencies: [
 
-        // General algorithms
-        .package(url: "https://github.com/apple/swift-algorithms", from: "1.2.0"),
-
         // Read OpenAPI documents
         .package(url: "https://github.com/mattpolzin/OpenAPIKit", from: "3.1.2"),
         .package(url: "https://github.com/jpsim/Yams", "4.0.0"..<"6.0.0"),
